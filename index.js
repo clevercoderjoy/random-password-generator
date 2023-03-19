@@ -8,32 +8,11 @@ let endIndex = 0;
 
 const generateRandomPassword = () => {
     newRandomPassword = "";
-    startIndex = Math.floor(Math.random() * characters.length);
-    endIndex = Math.floor(Math.random() * characters.length);
-    sortIndexes();
-    while(endIndex - startIndex !== 7){
-        startIndex = Math.floor(Math.random() * characters.length);
-        endIndex = Math.floor(Math.random() * characters.length);
+    for (let i = 0; i < 8; i++)
+    {
+        newRandomPassword += characters[Math.floor(Math.random() * characters.length)];
     }
-    for(let i = startIndex; i <= endIndex; i++){
-        newRandomPassword += characters[i];
-    }
-    getShuffledString();
-    console.log(newRandomPassword);
     render();
-}
-
-const getShuffledString = () => {
-    newRandomPassword = [...newRandomPassword].sort(()=>Math.random()-.8).join('');
-}
-
-const sortIndexes = () => {
-    let tempValue;
-    if(startIndex > endIndex){
-        tempValue = startIndex;
-        startIndex = endIndex;
-        endIndex = tempValue;
-    }
 }
 
 const render = () => {
