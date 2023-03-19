@@ -54,3 +54,8 @@ header{
     transition: ease-in-out 250ms;
     background: white;
 }
+
+a{
+    text-decoration: none;
+    color: #4ADF86;
+}
